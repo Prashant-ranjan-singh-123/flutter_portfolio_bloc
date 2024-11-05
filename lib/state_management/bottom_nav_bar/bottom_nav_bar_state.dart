@@ -5,6 +5,15 @@ sealed class BottomNavBarState extends Equatable {
 }
 
 final class BottomNavBarInitial extends BottomNavBarState {
+  int currectPage;
+  BottomNavBarInitial({required this.currectPage});
+
+  BottomNavBarInitial copyWith({
+    int? currectPage,
+  }) {
+    return BottomNavBarInitial(currectPage: currectPage ?? this.currectPage);
+  }
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [currectPage];
 }

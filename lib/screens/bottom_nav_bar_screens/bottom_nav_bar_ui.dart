@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prashant_portfolio/reusable/background.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import 'package:prashant_portfolio/utils/app_color.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BottomNavBarUi extends StatelessWidget {
-  final int initialPageIndex;
-  BottomNavBarUi({super.key, required this.initialPageIndex});
+  BottomNavBarUi({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.instance().background,
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return Background(
-            child: _pages[initialPageIndex],
+    return BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
+      builder: (context, state) {
+        if (state is BottomNavBarInitial) {
+          return Scaffold(
+            backgroundColor: AppColor.instance().background,
+            body: OrientationBuilder(
+              builder: (context, orientation) {
+                return Background(
+                  child: _pages[state.currectPage],
+                );
+              },
+            ),
+            bottomNavigationBar: _buildBottomNavigationBar(
+                currentIndex: state.currectPage, context: context),
           );
-        },
-      ),
-      bottomNavigationBar: _buildBottomNavigationBar(),
+        }
+        return const SizedBox();
+      },
     );
   }
 
-  Widget _buildBottomNavigationBar() {
+  Widget _buildBottomNavigationBar(
+      {required int currentIndex, required BuildContext context}) {
     return Theme(
         data: ThemeData(
           splashColor: Colors.transparent,
@@ -31,7 +41,7 @@ class BottomNavBarUi extends StatelessWidget {
         child: BottomNavigationBar(
           backgroundColor: AppColor.instance().background,
           type: BottomNavigationBarType.fixed,
-          currentIndex: initialPageIndex,
+          currentIndex: currentIndex,
           unselectedItemColor: AppColor.instance().bottomNavInactiveItem,
           selectedItemColor: AppColor.instance().bottomNavActiveText,
           selectedLabelStyle: const TextStyle(color: Colors.white),
@@ -40,7 +50,7 @@ class BottomNavBarUi extends StatelessWidget {
           showUnselectedLabels: true,
           elevation: 0,
           onTap: (index) {
-            // controller.setPageIndex(index);
+            context.read<BottomNavBarCubit>().changePage(index: index);
           },
           items: [
             _buildBottomNavigationBarItem(Iconsax.tag_user, 'About Me'),
@@ -77,10 +87,41 @@ class BottomNavBarUi extends StatelessWidget {
 
   // List of pages to be displayed
   List<Widget> get _pages => [
-    SizedBox(),
-    SizedBox(),
-    SizedBox(),
-    SizedBox(),
+        const Center(
+          child: Text('About me',
+              style: TextStyle(
+                  fontFamily: 'Oswald',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Colors.white)),
+        ),
+        const Center(
+          child: Text('Carrier',
+              style: TextStyle(
+                  fontFamily: 'Oswald',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Colors.white)),
+        ),
+        const Center(
+          child: Text('Projects',
+              style: TextStyle(
+                  fontFamily: 'Oswald',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Colors.white)),
+        ),
+        const Center(
+          child: Text('Certificate',
+              style: TextStyle(
+                  fontFamily: 'Oswald',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Colors.white)),
+        ),
+        // SizedBox(),
+        // SizedBox(),
+        // SizedBox(),
         // HomeScreen(),
         // CarrierScreen(),
         // WorkScreen(),
