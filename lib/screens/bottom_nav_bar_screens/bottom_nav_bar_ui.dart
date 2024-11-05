@@ -6,6 +6,9 @@ import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_ba
 import 'package:prashant_portfolio/utils/app_color.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../reusable/refresh_indicator.dart';
+import 'carrier.dart';
+
 class BottomNavBarUi extends StatelessWidget {
   BottomNavBarUi({super.key});
 
@@ -14,17 +17,19 @@ class BottomNavBarUi extends StatelessWidget {
     return BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
       builder: (context, state) {
         if (state is BottomNavBarInitial) {
-          return Scaffold(
-            backgroundColor: AppColor.instance().background,
-            body: OrientationBuilder(
-              builder: (context, orientation) {
-                return Background(
-                  child: _pages[state.currectPage],
-                );
-              },
+          return WarpIndicator(
+            child: Scaffold(
+              backgroundColor: AppColor.instance().background,
+              body: OrientationBuilder(
+                builder: (context, orientation) {
+                  return Background(
+                    child: _pages[state.currectPage],
+                  );
+                },
+              ),
+              bottomNavigationBar: _buildBottomNavigationBar(
+                  currentIndex: state.currectPage, context: context),
             ),
-            bottomNavigationBar: _buildBottomNavigationBar(
-                currentIndex: state.currectPage, context: context),
           );
         }
         return const SizedBox();
@@ -89,14 +94,7 @@ class BottomNavBarUi extends StatelessWidget {
   // List of pages to be displayed
   List<Widget> get _pages => [
         const AboutMe(),
-        const Center(
-          child: Text('Carrier',
-              style: TextStyle(
-                  fontFamily: 'Oswald',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 32,
-                  color: Colors.white)),
-        ),
+        const CarrierScreen(),
         const Center(
           child: Text('Projects',
               style: TextStyle(
@@ -113,12 +111,5 @@ class BottomNavBarUi extends StatelessWidget {
                   fontSize: 32,
                   color: Colors.white)),
         ),
-        // SizedBox(),
-        // SizedBox(),
-        // SizedBox(),
-        // HomeScreen(),
-        // CarrierScreen(),
-        // WorkScreen(),
-        // CertificateScreen(),
       ];
 }

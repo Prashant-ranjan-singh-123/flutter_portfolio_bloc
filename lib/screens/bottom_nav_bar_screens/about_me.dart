@@ -21,27 +21,25 @@ class AboutMe extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: WarpIndicator(
-        child: Background(
-          child: SafeArea(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.sizeOf(context).width * 0.03),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    topImageWidget(context: context),
-                    nameOdDev(context: context),
-                    professionOfDeveloper(context: context),
-                    socialMedia(context: context),
-                    aboutText(context: context),
-                    skillText(context: context),
-                    contactMe(context: context),
-                    socialProfileSelf(context: context)
-                    // experience()
-                  ],
-                ),
+      body: Background(
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.sizeOf(context).width * 0.03),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  topImageWidget(context: context),
+                  nameOdDev(context: context),
+                  professionOfDeveloper(context: context),
+                  socialMedia(context: context),
+                  aboutText(context: context),
+                  skillText(context: context),
+                  contactMe(context: context),
+                  socialProfileSelf(context: context)
+                  // experience()
+                ],
               ),
             ),
           ),

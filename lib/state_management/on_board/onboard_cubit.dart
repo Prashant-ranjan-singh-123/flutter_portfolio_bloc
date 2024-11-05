@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/about_me/about_me_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/carrier/carrier_cubit.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/certificate/certificate_cubit.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/project/project_cubit.dart';
 
 import '../../screens/bottom_nav_bar_screens/bottom_nav_bar_ui.dart';
 import '../../services/shared_pref/shared_pref.dart';
@@ -43,13 +46,23 @@ class OnboardCubit extends Cubit<OnboardState> {
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
             builder: (context) => MultiBlocProvider(
-              providers: [
-                BlocProvider(create: (context)=> BottomNavBarCubit(),),
-                BlocProvider(create: (context)=> AboutMeCubit(),),
-                // BlocProvider(create: (context)=> SplashCubit(),),
-                // BlocProvider(create: (context)=> SplashCubit(),),
-                // BlocProvider(create: (context)=> SplashCubit(),),
-              ],
+                  providers: [
+                    BlocProvider(
+                      create: (context) => BottomNavBarCubit(),
+                    ),
+                    BlocProvider(
+                      create: (context) => AboutMeCubit(),
+                    ),
+                    BlocProvider(
+                      create: (context) => CarrierCubit(),
+                    ),
+                    BlocProvider(
+                      create: (context) => ProjectCubit(),
+                    ),
+                    BlocProvider(
+                      create: (context) => CertificateCubit(),
+                    ),
+                  ],
                   child: BottomNavBarUi(),
                 )),
         (Route<dynamic> route) => false);

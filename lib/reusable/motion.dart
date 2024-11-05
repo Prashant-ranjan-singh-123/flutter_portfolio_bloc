@@ -7,7 +7,13 @@ class MyMotionWidget extends StatelessWidget {
   double borderRadius;
   bool glare;
   bool translation;
-  MyMotionWidget({super.key, required this.child, this.elevation = 8, this.borderRadius=20, this.glare=false, this.translation=false});
+  MyMotionWidget(
+      {super.key,
+      required this.child,
+      this.elevation = 8,
+      this.borderRadius = 20,
+      this.glare = false,
+      this.translation = false});
 
   @override
   Widget build(BuildContext context) {

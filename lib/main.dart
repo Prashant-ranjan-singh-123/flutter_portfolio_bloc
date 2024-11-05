@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:motion/motion.dart';
 import 'package:prashant_portfolio/state_management/splash/splash_cubit.dart';
 import 'screens/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Motion.instance.initialize();
+  Motion.instance.setUpdateInterval(60.fps);
   runApp(const MyApp());
 }
 

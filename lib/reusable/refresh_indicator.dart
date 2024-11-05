@@ -70,9 +70,9 @@ class _WarpIndicatorState extends State<WarpIndicator>
   }
 
   Offset _getRandomOffset() => Offset(
-    _random.nextInt(10) - 5,
-    _random.nextInt(10) - 5,
-  );
+        _random.nextInt(10) - 5,
+        _random.nextInt(10) - 5,
+      );
 
   double _getRandomAngle() {
     final degrees = ((_random.nextDouble() * 2) - 1);
@@ -94,7 +94,7 @@ class _WarpIndicatorState extends State<WarpIndicator>
     _state = WarpAnimationState.playing;
     stars = List.generate(
       widget.starsCount,
-          (index) => Star(initialColor: widget.starColorGetter(index)),
+      (index) => Star(initialColor: widget.starColorGetter(index)),
     );
   }
 
@@ -117,7 +117,6 @@ class _WarpIndicatorState extends State<WarpIndicator>
   @override
   Widget build(BuildContext context) {
     return CustomRefreshIndicator(
-
       key: widget.indicatorKey,
       controller: widget.controller,
       offsetToArmed: _indicatorSize,
@@ -136,10 +135,10 @@ class _WarpIndicatorState extends State<WarpIndicator>
       },
       child: widget.child,
       builder: (
-          BuildContext context,
-          Widget child,
-          IndicatorController controller,
-          ) {
+        BuildContext context,
+        Widget child,
+        IndicatorController controller,
+      ) {
         final animation = Listenable.merge([controller, shakeController]);
         return Stack(
           children: <Widget>[
