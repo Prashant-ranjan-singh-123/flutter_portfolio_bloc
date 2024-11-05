@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prashant_portfolio/reusable/background.dart';
+import 'package:prashant_portfolio/screens/bottom_nav_bar_screens/about_me.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import 'package:prashant_portfolio/utils/app_color.dart';
 import 'package:iconsax/iconsax.dart';
@@ -87,14 +88,7 @@ class BottomNavBarUi extends StatelessWidget {
 
   // List of pages to be displayed
   List<Widget> get _pages => [
-        const Center(
-          child: Text('About me',
-              style: TextStyle(
-                  fontFamily: 'Oswald',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 32,
-                  color: Colors.white)),
-        ),
+        const AboutMe(),
         const Center(
           child: Text('Carrier',
               style: TextStyle(

@@ -131,7 +131,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       else
                         InkWell(
                             onTap: () {
-                              cubit.navigateToMainApp();
+                              cubit.navigateToMainApp(context: context);
                               // Get.off(MainApp(isRTL: false,),
                               //     transition: Transition.zoom,
                               //     duration: const Duration(milliseconds: 450));

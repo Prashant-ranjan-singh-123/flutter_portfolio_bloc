@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/about_me/about_me_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 
 import '../../screens/bottom_nav_bar_screens/bottom_nav_bar_ui.dart';
@@ -33,17 +34,24 @@ class OnboardCubit extends Cubit<OnboardState> {
       emit(OnboardInitial(isLast: false, isFirst: true));
     } else {
       // emit(OnboardInitial(isLast: false, isFirst: true));
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) =>
-              BlocProvider(
-                create: (context) => BottomNavBarCubit(),
-                child: BottomNavBarUi(),
-              )),
-              (Route<dynamic> route) => false);
+      navigateToMainApp(context: context);
+      // emit(OnboardInitial(isLast: false, isFirst: true));
     }
   }
 
-  void navigateToMainApp() {
-    print('hello');
+  void navigateToMainApp({required BuildContext context}) {
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+            builder: (context) => MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context)=> BottomNavBarCubit(),),
+                BlocProvider(create: (context)=> AboutMeCubit(),),
+                // BlocProvider(create: (context)=> SplashCubit(),),
+                // BlocProvider(create: (context)=> SplashCubit(),),
+                // BlocProvider(create: (context)=> SplashCubit(),),
+              ],
+                  child: BottomNavBarUi(),
+                )),
+        (Route<dynamic> route) => false);
   }
 }
