@@ -1,9 +1,9 @@
 <div align="center">
 <br>
-<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/android/app/src/main/ic_launcher-playstore.png" width="200" />
+<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/asset/image/logo.png" width="200" />
 </div>
 
-<h1 align="center">PrashantSkillscape</h1>
+<h1 align="center">Portfolio</h1>
 
 
 
@@ -29,7 +29,7 @@
 <br>
 
 
-<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/feature_graphic.png"/>
+<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/playstore_things/feature_graphic.png"/>
 
 <p style="text-align: left; font-weight: normal;">PrashantSkillscape: Your professional journey, beautifully presented. This Flutter-built portfolio app showcases your skills, experience, and achievements with style. Featuring Material Design 3, it displays your name, designation, social media links, and a concise summary. Easily customizable, it highlights your education, work history, projects, and certifications. Whether you're a Flutter expert or novice, adapting this app is simple. Make a lasting impression with PrashantSkillscape - where your career story comes to life in a tap.</p>
 
