@@ -38,8 +38,8 @@ class OnboardCubit extends Cubit<OnboardState> {
       await SharedPrefFunctions.setFirstRunBoolOnboardFalse();
       emit(OnboardInitial(isLast: false, isFirst: true));
     } else {
-      emit(OnboardInitial(isLast: false, isFirst: true));
-      // navigateToMainApp(context: context);
+      // emit(OnboardInitial(isLast: false, isFirst: true));
+      navigateToMainApp(context: context);
       // emit(OnboardInitial(isLast: false, isFirst: true));
     }
   }

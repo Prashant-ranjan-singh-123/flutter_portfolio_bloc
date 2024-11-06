@@ -49,7 +49,7 @@ class _AppDrawerBuilderState extends State<AppDrawerBuilder> {
           AppColor.instance().background.withBlue(10).withRed(7),
       slideWidth: MediaQuery.of(context).size.width * 0.5,
       style: DrawerStyle.defaultStyle,
-      disableDragGesture: false,
+      disableDragGesture: true,
     );
   }
 }
