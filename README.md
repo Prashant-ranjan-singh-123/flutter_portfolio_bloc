@@ -1,6 +1,6 @@
 <div align="center">
 <br>
-<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/asset/image/logo.png" width="200" />
+<img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/asset/image/logo.png" width="400" />
 </div>
 
 <h1 align="center">Portfolio</h1>
