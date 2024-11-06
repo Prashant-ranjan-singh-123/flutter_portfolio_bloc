@@ -5,6 +5,9 @@ sealed class CertificateState extends Equatable {
 }
 
 final class CertificateInitial extends CertificateState {
+  String currentCategory;
+  CertificateInitial({required this.currentCategory});
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [currentCategory];
 }
