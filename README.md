@@ -77,20 +77,6 @@
 - Responsive UI 📱
   <br>
 
-## Some Screens 📱
-<details>
-<table>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/1.png" width="499dp"></td>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/2.png" width="499dp"></td>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/3.png" width="499dp"></td>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/4.png" width="499dp"></td>
- </table>
-</details>
-
-<br>
-
 ## Building from Source
 
 1. If you don't have Flutter SDK installed, please visit official [Flutter](https://flutter.dev/) site.
