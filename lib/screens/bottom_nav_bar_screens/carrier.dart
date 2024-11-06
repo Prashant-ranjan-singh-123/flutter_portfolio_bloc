@@ -272,8 +272,8 @@ class _CarrierScreenState extends State<CarrierScreen> {
                           (buildContext.read<CarrierCubit>().experience.length -
                                   1 -
                                   index) *
-                              300),
-                  curve: Curves.decelerate,
+                              50),
+                  curve: Curves.easeInOutExpo,
                   child: myCustomTimeline(
                       isLast: true,
                       heading: buildContext
@@ -293,8 +293,8 @@ class _CarrierScreenState extends State<CarrierScreen> {
                           (buildContext.read<CarrierCubit>().experience.length -
                                   1 -
                                   index) *
-                              300),
-                  curve: Curves.decelerate,
+                              50),
+                  curve: Curves.easeInOutExpo,
                   child: myCustomTimeline(
                       isLast: false,
                       heading: buildContext

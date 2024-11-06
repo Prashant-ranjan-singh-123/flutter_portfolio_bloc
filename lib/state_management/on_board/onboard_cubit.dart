@@ -57,7 +57,8 @@ class OnboardCubit extends Cubit<OnboardState> {
                       create: (context) => CarrierCubit(),
                     ),
                     BlocProvider(
-                      create: (context) => ProjectCubit(),
+                      create: (context) =>
+                          ProjectCubit(),
                     ),
                     BlocProvider(
                       create: (context) => CertificateCubit(),

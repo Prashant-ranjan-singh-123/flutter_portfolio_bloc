@@ -20,14 +20,17 @@ class CarrierCubit extends Cubit<CarrierState> {
   String page_not_found = 'http://google.com/this-page-does-not-exist';
 
   // -- Experience List Link
-  String oasis_link = 'https://github.com/Prashant-ranjan-singh-123/OasisInfobyte_Java_Project';
-  String sync_link = 'https://github.com/Prashant-ranjan-singh-123/Sync-Internship';
-  String codeClause_link = 'https://github.com/Prashant-ranjan-singh-123/codeclause-internship';
+  String oasis_link =
+      'https://github.com/Prashant-ranjan-singh-123/OasisInfobyte_Java_Project';
+  String veramasa_link =
+      'https://veramasa.com/';
+  String sync_link =
+      'https://github.com/Prashant-ranjan-singh-123/Sync-Internship';
+  String codeClause_link =
+      'https://github.com/Prashant-ranjan-singh-123/codeclause-internship';
   String codSoft_link = 'https://github.com/Prashant-ranjan-singh-123/CodSoft';
 
   CarrierCubit() : super(CarrierInitial()) {
-
-
     // -- To Open tenth Logic --
     void open10thSchool() async {
       print('object');
@@ -35,7 +38,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -47,7 +50,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -59,7 +62,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -71,7 +74,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -83,7 +86,19 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
+        throw 'Could not launch $url';
+      }
+    }
+
+    // -- To Open oasis_link Logic --
+    void openVeramasa() async {
+      print('object');
+      String dt = veramasa_link;
+      Uri url = Uri.parse(dt);
+      try {
+        await launchUrl(url);
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -95,7 +110,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -107,7 +122,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -119,7 +134,7 @@ class CarrierCubit extends Cubit<CarrierState> {
       Uri url = Uri.parse(dt);
       try {
         await launchUrl(url);
-      }catch (e){
+      } catch (e) {
         throw 'Could not launch $url';
       }
     }
@@ -182,10 +197,16 @@ class CarrierCubit extends Cubit<CarrierState> {
       ],
       7: [
         'Infovirtech (Junior Flutter Dev.)',
-        'Jul 2023 - Aug 2023\n\n'
+        'Jan 2024 - May 2024 \n\n'
             'I immersed myself in Flutter development, gaining extensive hands-on experience in cross-platform app creation, state management, and UI design. Collaborating closely on real projects',
         openPageNotFound
-      ]
+      ],
+      8: [
+        'Veramasa (Flutter Dev)',
+        'May 2024 - now\n\n'
+            'I immersed myself in Flutter development, gaining extensive hands-on experience in cross-platform app creation, state management, and UI design. Collaborating closely on real projects',
+        openVeramasa
+      ],
     };
   }
 }
