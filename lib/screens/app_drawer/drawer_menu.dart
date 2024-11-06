@@ -137,7 +137,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
           ),
           AutoSizeText(
-            'Version: 1.1.0',
+            'Version: 1.1.1',
             maxLines: 1,
             style: TextStyle(
                 fontFamily: 'Oswald', color: AppColor.instance().textLight),

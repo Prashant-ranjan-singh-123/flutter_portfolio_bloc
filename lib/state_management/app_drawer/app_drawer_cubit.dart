@@ -49,7 +49,7 @@ class AppDrawerCubit extends Cubit<AppDrawerState> {
     }
 
     String dt =
-        'https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape';
+        'https://github.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc';
     bool isInstalled = await isGithubInInstalled();
     if (isInstalled != false) {
       AndroidIntent intent = AndroidIntent(action: 'action_view', data: dt);

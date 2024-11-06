@@ -61,7 +61,7 @@
       </a>
     </td>
     <td width="50%" align="center">
-      <a href="https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape/releases/download/apk-1.1.0/Prashant-Devfolio-1.1.0.apk">
+      <a href="https://github.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/releases/download/1.1.1/Prashant.Portfolio.1.1.1.apk">
         <img src="https://raw.githubusercontent.com/flocke/andOTP/master/assets/badges/get-it-on-github.png" alt="Get it on GitHub" width="100%">
       </a>
     </td>
