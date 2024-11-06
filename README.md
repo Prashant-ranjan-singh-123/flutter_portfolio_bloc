@@ -39,8 +39,13 @@
 ## Some Screens 📱
 <table>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_diwali/refs/heads/main/github_things/Image_2.png" width="499dp"></td>
-    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_diwali/refs/heads/main/github_things/image_1.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/playstore_things/img.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/playstore_things/img_1.png" width="499dp"></td>
+  </tr>
+<tr>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/playstore_things/img_2.png" width="499dp"></td>
+    <td><img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc/refs/heads/main/playstore_things/img_3.png" width="499dp"></td>
+  </tr>
  </table>
 
 <br>
