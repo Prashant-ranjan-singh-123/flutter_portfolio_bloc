@@ -7,6 +7,7 @@ import 'package:prashant_portfolio/state_management/bottom_nav_bar/carrier/carri
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../../reusable/motion.dart';
+import '../../state_management/app_drawer/app_drawer_cubit.dart';
 import '../../utils/app_color.dart';
 
 class CarrierScreen extends StatefulWidget {
@@ -242,9 +243,14 @@ class _CarrierScreenState extends State<CarrierScreen> {
                 FadeInDownBig(
                   child: IconButton(
                     onPressed: () {
+                      context
+                          .read<AppDrawerCubit>()
+                          .zoomDrawerController
+                          .toggle
+                          ?.call();
                       // drawerController.toggleDrawer();
                     },
-                    icon: const Icon(Iconsax.menu, size: 25),
+                    icon: Icon(Iconsax.menu, size: 25,color: AppColor.instance().textBold,),
                   ),
                 ),
                 Expanded(

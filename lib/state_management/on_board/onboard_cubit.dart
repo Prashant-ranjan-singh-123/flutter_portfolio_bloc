@@ -3,12 +3,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prashant_portfolio/state_management/app_drawer/app_drawer_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/about_me/about_me_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/carrier/carrier_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/certificate/certificate_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/project/project_cubit.dart';
 
+import '../../screens/app_drawer/app_drawer_builder.dart';
 import '../../screens/bottom_nav_bar_screens/bottom_nav_bar_ui.dart';
 import '../../services/shared_pref/shared_pref.dart';
 
@@ -36,8 +38,8 @@ class OnboardCubit extends Cubit<OnboardState> {
       await SharedPrefFunctions.setFirstRunBoolOnboardFalse();
       emit(OnboardInitial(isLast: false, isFirst: true));
     } else {
-      // emit(OnboardInitial(isLast: false, isFirst: true));
-      navigateToMainApp(context: context);
+      emit(OnboardInitial(isLast: false, isFirst: true));
+      // navigateToMainApp(context: context);
       // emit(OnboardInitial(isLast: false, isFirst: true));
     }
   }
@@ -63,8 +65,11 @@ class OnboardCubit extends Cubit<OnboardState> {
                     BlocProvider(
                       create: (context) => CertificateCubit(),
                     ),
+                    BlocProvider(
+                      create: (context) => AppDrawerCubit(),
+                    ),
                   ],
-                  child: BottomNavBarUi(),
+                  child: const AppDrawerBuilder(isRTL: false,),
                 )),
         (Route<dynamic> route) => false);
   }

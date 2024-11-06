@@ -120,7 +120,7 @@ class PageViewShow extends StatelessWidget {
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w400,
             fontSize: 13,
-            color: AppColor.instance().textLight),
+            color: AppColor.instance().textBold.withOpacity(0.8)),
         textAlign: TextAlign.start,
       );
     }

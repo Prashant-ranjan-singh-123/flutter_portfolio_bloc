@@ -9,6 +9,7 @@ import 'package:prashant_portfolio/reusable/background.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/certificate/certificate_cubit.dart';
 import 'package:prashant_portfolio/utils/app_color.dart';
 import '../../../reusable/motion.dart';
+import '../../../state_management/app_drawer/app_drawer_cubit.dart';
 import 'certificate_select_category_widget.dart';
 
 class CertificateUi extends StatefulWidget {
@@ -102,11 +103,17 @@ class _CertificateUiState extends State<CertificateUi> {
           padding: const EdgeInsets.only(top: 20),
           child: IconButton(
               onPressed: () {
+                context
+                    .read<AppDrawerCubit>()
+                    .zoomDrawerController
+                    .toggle
+                    ?.call();
                 // drawerController.toggleDrawer();
               },
-              icon: const Icon(
+              icon: Icon(
                 Iconsax.menu,
                 size: 25,
+                color: AppColor.instance().textBold,
               )),
         ),
         Column(

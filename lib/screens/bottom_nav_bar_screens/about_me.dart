@@ -6,6 +6,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:prashant_portfolio/reusable/background.dart';
+import 'package:prashant_portfolio/state_management/app_drawer/app_drawer_cubit.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/about_me/about_me_cubit.dart';
 import 'package:prashant_portfolio/utils/app_assets.dart';
 import 'package:prashant_portfolio/utils/app_color.dart';
@@ -110,11 +111,16 @@ class AboutMe extends StatelessWidget {
           ),
           IconButton(
               onPressed: () {
-                // drawerController.toggleDrawer();
+                context
+                    .read<AppDrawerCubit>()
+                    .zoomDrawerController
+                    .toggle
+                    ?.call();
               },
-              icon: const Icon(
+              icon: Icon(
                 Iconsax.menu,
                 size: 25,
+                color: AppColor.instance().textBold,
               ))
         ],
       ),
@@ -294,63 +300,63 @@ class AboutMe extends StatelessWidget {
 
   Widget skillText({required BuildContext context}) {
     return Padding(
-        padding: const EdgeInsets.only(top: 40),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              heading(heading: 'Skills', paddingTop: 0, paddingBottom: 40),
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, // number of items in each row
-                  mainAxisSpacing: 15.0,
-                  crossAxisSpacing: 0.0, // spacing between columns
-                ),
-                itemCount: context
-                    .read<AboutMeCubit>()
-                    .skills
-                    .length, // Number of items in the map
-                itemBuilder: (context, index) {
-                  // Get the key for the current index
-                  final key =
-                      context.read<AboutMeCubit>().skills.keys.elementAt(index);
-
-                  // Access the skill data using the key
-                  final skillData = context.read<AboutMeCubit>().skills[key]!;
-
-                  return Column(
-                    children: [
-                      CircularPercentIndicator(
-                        animation: true,
-                        animationDuration: 6000,
-                        radius: MediaQuery.of(context).size.width * 0.08,
-                        lineWidth: 10,
-                        percent: skillData[1],
-                        progressColor: AppColor.instance().homeSkillActive,
-                        backgroundColor: AppColor.instance().homeSkillUnachieve,
-                        circularStrokeCap: CircularStrokeCap.square,
-                      ),
-                      const SizedBox(height: 10),
-                      AutoSizeText(
-                        skillData[0],
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15,
-                          fontFamily: 'OpenSans',
-                          color: AppColor.instance().textBold,
-                        ),
-                      ),
-                    ],
-                  );
-                },
+      padding: const EdgeInsets.only(top: 40),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            heading(heading: 'Skills', paddingTop: 0, paddingBottom: 40),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, // number of items in each row
+                mainAxisSpacing: 15.0,
+                crossAxisSpacing: 0.0, // spacing between columns
               ),
-            ],
-          ),
+              itemCount: context
+                  .read<AboutMeCubit>()
+                  .skills
+                  .length, // Number of items in the map
+              itemBuilder: (context, index) {
+                // Get the key for the current index
+                final key =
+                    context.read<AboutMeCubit>().skills.keys.elementAt(index);
+
+                // Access the skill data using the key
+                final skillData = context.read<AboutMeCubit>().skills[key]!;
+
+                return Column(
+                  children: [
+                    CircularPercentIndicator(
+                      animation: true,
+                      animationDuration: 6000,
+                      radius: MediaQuery.of(context).size.width * 0.08,
+                      lineWidth: 10,
+                      percent: skillData[1],
+                      progressColor: AppColor.instance().homeSkillActive,
+                      backgroundColor: AppColor.instance().homeSkillUnachieve,
+                      circularStrokeCap: CircularStrokeCap.square,
+                    ),
+                    const SizedBox(height: 10),
+                    AutoSizeText(
+                      skillData[0],
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        fontFamily: 'OpenSans',
+                        color: AppColor.instance().textBold,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
         ),
-      );
+      ),
+    );
   }
 
   Widget contactMe({required BuildContext context}) {
