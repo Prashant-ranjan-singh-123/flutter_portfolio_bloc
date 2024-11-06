@@ -86,7 +86,7 @@ https://flutter.dev/
 
 2. Fetch latest source code from master branch.
 ```
-git clone https://github.com/Prashant-ranjan-singh-123/PrashantSkillscape.git
+git clone https://github.com/Prashant-ranjan-singh-123/flutter_portfolio_bloc.git
 ```
 
 3. Download Dependency:
