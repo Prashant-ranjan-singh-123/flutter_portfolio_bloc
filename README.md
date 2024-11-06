@@ -46,48 +46,6 @@
 <br>
 
 
-## Create Your Own PortFolio App
-
-### 1) Change Details in following locations.
-<details>
-  <summary>More Detail</summary>
-
-1. lib/view/bottom_nav_bar/carrier/carrier_screen_data.dart
-   <details>
-     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/carrier_data.png"/>
-   </details>
-
-2. lib/view/bottom_nav_bar/home_page/home_screen_data.dart
-   <details>
-     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/home_data.png"/>
-   </details>
-
-3. lib/view/bottom_nav_bar/works/work_screen_data.dart
-   <details>
-     <img src="https://raw.githubusercontent.com/Prashant-ranjan-singh-123/PrashantSkillscape/main/readme_images/work_data.png"/>
-   </details>
-</details>
-
-### 2) Change Package Name
-```
-https://pub.dev/packages/change_app_package_name
-```
-
-### 3) Change Application Icon
-```
-https://pub.dev/packages/flutter_launcher_icons
-```
-
-### 4) Change App Name
-```
-https://pub.dev/packages/rename_app
-```
-
-### 5) Build Your Customise Apk File
-```
-flutter run build apk --release
-```
-
 ## Download 🔥
 <table width="100%">
   <tr>
