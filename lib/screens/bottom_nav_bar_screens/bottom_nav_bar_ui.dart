@@ -5,6 +5,7 @@ import 'package:prashant_portfolio/screens/bottom_nav_bar_screens/about_me.dart'
 import 'package:prashant_portfolio/screens/bottom_nav_bar_screens/certificate/certificate.dart';
 import 'package:prashant_portfolio/screens/bottom_nav_bar_screens/project/project_ui.dart';
 import 'package:prashant_portfolio/state_management/bottom_nav_bar/bottom_nav_bar_cubit.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/project/project_cubit.dart';
 import 'package:prashant_portfolio/utils/app_color.dart';
 import 'package:iconsax/iconsax.dart';
 

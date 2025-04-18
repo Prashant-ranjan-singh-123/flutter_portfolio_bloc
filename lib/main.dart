@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:motion/motion.dart';
+import 'package:prashant_portfolio/state_management/bottom_nav_bar/project/project_cubit.dart';
 import 'package:prashant_portfolio/state_management/splash/splash_cubit.dart';
 import 'screens/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,11 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => SplashCubit(),
-        child: const SplashScreen(),
+    return BlocProvider(
+      create: (context) => ProjectCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BlocProvider(
+          create: (context) => SplashCubit(),
+          child: const SplashScreen(),
+        ),
       ),
     );
   }
